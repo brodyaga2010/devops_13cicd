@@ -25,9 +25,9 @@ jobs:
         id: push
         uses: docker/build-push-action@v6
         with:
-        context: ./server/
-        push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/devops_cicd:latest
+          context: ./server/
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/devops_cicd:latest
 
   touch-k8s-manifest:
     needs: [ push_to_registry ]
